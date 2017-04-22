@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gridness", "Gridness\Gridness.csproj", "{832FB2EC-099F-4076-B539-F44B6B74B639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridTest", "GridTest\GridTest.csproj", "{D393DD46-DAD3-41EC-A80A-B0D0A8A05C50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{832FB2EC-099F-4076-B539-F44B6B74B639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832FB2EC-099F-4076-B539-F44B6B74B639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832FB2EC-099F-4076-B539-F44B6B74B639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832FB2EC-099F-4076-B539-F44B6B74B639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D393DD46-DAD3-41EC-A80A-B0D0A8A05C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D393DD46-DAD3-41EC-A80A-B0D0A8A05C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D393DD46-DAD3-41EC-A80A-B0D0A8A05C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D393DD46-DAD3-41EC-A80A-B0D0A8A05C50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
