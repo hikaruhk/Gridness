@@ -16,7 +16,7 @@ namespace GridTest
         [TestMethod]
         public void HighlightCells()
         {
-            var shapeFunction = new Mock<ShapeFunctions<TestShape>>();
+            var shapeFunction = new Mock<IShapeFunctions<TestShape>>();
             var shapes = new List<TestShape>()
             {
                 new TestShape(1, -1),
@@ -39,7 +39,7 @@ namespace GridTest
         [TestMethod]
         public void HighlightCell()
         {
-            var shapeFunction = new Mock<ShapeFunctions<TestShape>>();
+            var shapeFunction = new Mock<IShapeFunctions<TestShape>>();
             shapeFunction.Setup(s => s.CreateGrid()).Returns(TestHelper.Create1x1Grid);
 
             var grid = new GridManager(shapeFunction.Object);
@@ -52,7 +52,7 @@ namespace GridTest
         [TestMethod]
         public void HighlightCellOverload()
         {
-            var shapeFunction = new Mock<ShapeFunctions<TestShape>>();
+            var shapeFunction = new Mock<IShapeFunctions<TestShape>>();
             shapeFunction.Setup(s => s.CreateGrid()).Returns(TestHelper.Create1x1Grid);
 
             var grid = new GridManager(shapeFunction.Object);
@@ -67,7 +67,7 @@ namespace GridTest
         [ExpectedException(typeof(InvalidOperationException))]
         public void HighlightCellInvalid()
         {
-            var shapeFunction = new Mock<ShapeFunctions<TestShape>>();
+            var shapeFunction = new Mock<IShapeFunctions<TestShape>>();
             shapeFunction.Setup(s => s.CreateGrid()).Returns(TestHelper.Create1x1Grid);
 
             var grid = new GridManager(shapeFunction.Object);
