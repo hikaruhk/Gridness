@@ -9,11 +9,11 @@ namespace Gridness
     //Gridness calls the shape operations using the internal dictionary of the current shapes with coordinates.
     public class GridManager
     {
-        public IDictionary<Coordinate, Shape> Grid { get; private set; }
+        public IDictionary<Coordinate, IShape> Grid { get; private set; }
 
-        private readonly ShapeFunctions<Shape> GridOperations;
+        private readonly IShapeFunctions<IShape> GridOperations;
 
-        public GridManager(ShapeFunctions<Shape> gridOperations)
+        public GridManager(IShapeFunctions<IShape> gridOperations)
         {
             GridOperations = gridOperations;
             Grid = gridOperations.CreateGrid();
@@ -41,7 +41,7 @@ namespace Gridness
         /// <param name="y1"></param>
         /// <param name="x2"></param>
         /// <param name="y2"></param>
-        public void HighlightLine(Shape a, Shape b)
+        public void HighlightLine(IShape a, IShape b)
         {
             foreach(var shape in GridOperations.ShapesBetween(a, b))
             {
@@ -53,7 +53,7 @@ namespace Gridness
 
         public void Highlight(Coordinate coordinate)
         {
-            var shape = default(Shape);
+            var shape = default(IShape);
 
             if (Grid.TryGetValue(coordinate, out shape))
             {

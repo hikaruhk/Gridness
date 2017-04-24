@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Gridness.Interfaces
 {
-    public interface ShapeFunctions<out T> 
-        where T : Shape
+    public interface IShapeFunctions<out T> 
+        where T : IShape
     {
-        IDictionary<Coordinate, Shape> CreateGrid();
+        IDictionary<Coordinate, IShape> CreateGrid();
         IEnumerable<T> ShapesBetween(double x1, double y1, double x2, double y2);
-        IEnumerable<T> ShapesBetween(Shape a, Shape b);
+        IEnumerable<T> ShapesBetween(IShape a, IShape b);
     }
 }

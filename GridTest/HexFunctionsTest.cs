@@ -1,4 +1,5 @@
 ﻿using Gridness;
+using Gridness.Models;
 using GridTest.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -60,6 +61,15 @@ namespace GridTest
 
             //From the first point the the last point should be 11 going diag. 
             Assert.IsTrue(hexagons.Count() == 12);
+        }
+
+        [TestMethod]
+        public void ShapesOnEdge()
+        {
+            var functions = new HexFunctions<Hex>(5);
+
+            var hexagons = functions.ShapesBetween(0, 0, 5, -3);
+
         }
     }
 }

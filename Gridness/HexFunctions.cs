@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 namespace Gridness
 {
-    public class HexFunctions<T> : ShapeFunctions<T>
-        where T : Shape, new()
+    public class HexFunctions<T> : IShapeFunctions<T>
+        where T : IShape, new()
     {
         private readonly int Radius;
 
@@ -15,9 +15,9 @@ namespace Gridness
             Radius = radius;
         }
 
-        public IDictionary<Coordinate, Shape> CreateGrid()
+        public IDictionary<Coordinate, IShape> CreateGrid()
         {
-            var grid = new Dictionary<Coordinate, Shape>();
+            var grid = new Dictionary<Coordinate, IShape>();
 
             for (int q = -Radius; q <= Radius; ++q)
             {
@@ -41,7 +41,7 @@ namespace Gridness
             
 
         //Return a line of shapes from shape A -> shape B
-        public IEnumerable<T> ShapesBetween(Shape a, Shape b)
+        public IEnumerable<T> ShapesBetween(IShape a, IShape b)
         {
             var distance = Distance(a, b);
 
@@ -54,7 +54,7 @@ namespace Gridness
 
         //Makes sure that when we are in floating pointed coordinates,
         //that we choose the right (consistant) hex.
-        private T CubeRound(Shape shape)
+        private T CubeRound(IShape shape)
         {
             var roundedX = Math.Round(shape.Coordinate.X);
             var roundedY = Math.Round(shape.Coordinate.Y);
@@ -78,14 +78,14 @@ namespace Gridness
         }
 
         //Change to return coordinates?
-        private T CubeLerp(Shape a, Shape b, double c) =>
+        private T CubeLerp(IShape a, IShape b, double c) =>
             Create(Lerp(a.Coordinate.X, b.Coordinate.X, c),
                 Lerp(a.Coordinate.Y, b.Coordinate.Y, c));
 
         private double Lerp(double a, double b, double c) => a + (b - a) * c;
 
         //Get the distance between two hexes. This is prob gonna be used a lot.
-        private double Distance(Shape a, Shape b) =>
+        private double Distance(IShape a, IShape b) =>
             (Math.Abs(a.Coordinate.X - b.Coordinate.X) + 
             Math.Abs(a.Coordinate.Y - b.Coordinate.Y) + 
             Math.Abs(a.Coordinate.Z - b.Coordinate.Z)) / 2;

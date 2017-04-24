@@ -1,5 +1,5 @@
 c:\users\hkomp\documents\visual studio 2015\Projects\Gridness\Gridness\bin\Debug\Gridness.dll
 c:\users\hkomp\documents\visual studio 2015\Projects\Gridness\Gridness\bin\Debug\Gridness.pdb
-c:\users\hkomp\documents\visual studio 2015\Projects\Gridness\Gridness\obj\Debug\Gridness.csprojResolveAssemblyReference.cache
 c:\users\hkomp\documents\visual studio 2015\Projects\Gridness\Gridness\obj\Debug\Gridness.dll
 c:\users\hkomp\documents\visual studio 2015\Projects\Gridness\Gridness\obj\Debug\Gridness.pdb
+C:\Users\HKomp\documents\visual studio 2015\Projects\Gridness\Gridness\obj\Debug\Gridness.csprojResolveAssemblyReference.cache
